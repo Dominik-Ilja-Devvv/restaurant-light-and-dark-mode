@@ -118,9 +118,9 @@ img {
 
 .button {
   display: inline-block;
-  background-color: var(--first-color);
-  color: #fff;
   padding: 0.75rem 1rem;
+  color: #fff;
+  background-color: var(--first-color);
   border-radius: 0.5rem;
   transition: 0.3s;
 }
@@ -223,6 +223,18 @@ img {
 }
 .home__img {
   width: 300px;
+  justify-self: center;
+}
+
+.about__data {
+  text-align: center;
+}
+.about__description {
+  margin-bottom: var(--mb-3);
+}
+.about__img {
+  width: 280px;
+  border-radius: 0.5rem;
   justify-self: center;
 }
 

@@ -135,17 +135,14 @@ img { max-width: 100%; height: auto; }
 // ================================================ //
 .button {
   display: inline-block;
-  background-color: var(--first-color);
+  padding: 0.75rem 1rem;
   color: #fff;
-  padding: .75rem 1rem;
+  background-color: var(--first-color);
   border-radius: 0.5rem;
   transition: 0.3s;
 
   &:hover { background-color: var(--first-color-alt); }
 }
-
-
-
 
 // ================================================================ //
 // NAVIGATION
@@ -250,6 +247,21 @@ img { max-width: 100%; height: auto; }
 
   &__img {
     width: 300px;
+    justify-self: center;
+  }
+}
+
+// ================================================================ //
+// ABOUT
+// ================================================================ //
+
+.about {
+
+  &__data { text-align: center; }
+  &__description { margin-bottom: var(--mb-3); }
+  &__img {
+    width: 280px;
+    border-radius: 0.5rem;
     justify-self: center;
   }
 }
