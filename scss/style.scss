@@ -296,6 +296,7 @@ img { max-width: 100%; height: auto; }
 // ================================================================ //
 // MENU
 // ================================================================ //
+
 .menu {
 
   &__container {
@@ -325,9 +326,7 @@ img { max-width: 100%; height: auto; }
 
   &__detail, &__price { font-size: var(--small-font-size); }
 
-  &__detail {
-    margin-bottom: var(--mb-1);
-  }
+  &__detail { margin-bottom: var(--mb-1); }
 
   &__button {
     position: absolute;
@@ -337,4 +336,28 @@ img { max-width: 100%; height: auto; }
     border-bottom-left-radius: 0;
     padding: 0.625rem 0.813rem;
   }
+}
+
+// ================================================================ //
+// APP
+// ================================================================ //
+
+.app {
+
+  &__data { text-align: center; }
+
+  &__description { margin-bottom: var(--mb-5); }
+
+  &__stores { margin-bottom: var(--mb-4); }
+
+  &__store {
+    width: 120px;
+    margin: 0 var(--mb-1);
+  }
+
+  &__img {
+    width: 230px;
+    justify-self: center;
+  }
+
 }
