@@ -1,9 +1,14 @@
-// ==================== GOOGLE FONTS ==================== //
+// ================================================================ //
+// GOOGLE FONTS
+// ================================================================ //
 
 // font-family: 'Poppins', sans-serif;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-// ==================== ROOT VARIABLES ==================== //
+// ================================================================ //
+// ROOT VARIABLES
+// ================================================================ //
+
 :root {
   --header-height: 3rem;
 
@@ -41,6 +46,12 @@
   --z-fixed: 100;
 }
 
+// ------------------------------
+// | Use this media query to increase
+// | the font sizes for screens that are
+// | 768px or larger.
+// ------------------------------
+
 @media screen and (min-width: 768px) {
   :root {
     --biggest-font-size: 4rem;
@@ -53,37 +64,192 @@
   }
 }
 
-// ==================== RESET ==================== //
+// ================================================================ //
+// RESET
+// ================================================================ //
+
 *, ::before, ::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
+
 body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
-  color: var(--text-color);
   line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--body-color);
 }
 
 h1, h2, h3, p, ul { margin: 0; }
-ul { padding: 0; list-style: none;}
-a { text-decoration: none;}
-img {max-width: 100%; height: auto;}
 
-// ==================== CLASS CSS ==================== //
+ul { padding: 0; list-style: none; }
+
+a { text-decoration: none; }
+
+img { max-width: 100%; height: auto; }
+
+// ================================================================ //
+// Utility Classes
+// ================================================================ //
 .section { padding: 4rem 0 2rem; }
 
 .section-title, .section-subtitle { text-align: center; }
 
 .section-title {
+  margin-bottom: var(--mb-3);
   font-size: var(--h1-font-size);
   color: var(--title-color);
-  margin-bottom: var(--mb-3);
 }
 
 .section-subtitle {
-  display: block;color: var(--first-color);
-  font-weight: var(--font-medium);
+  display: block;
   margin-bottom: var(--mb-1);
+  font-weight: var(--font-medium);
+  color: var(--first-color);
+}
+
+// ========== LAYOUT CLASSES  ========== //
+.bd-container {
+  width: calc(100% - 2rem);
+  max-width: 960px;
+  margin-right: var(--mb-2);
+  margin-left: var(--mb-2);
+}
+
+.bd-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  width: 100%;
+  background-color: var(--body-color);
+}
+
+// BUTTONS
+// ================================================ //
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: .75rem 1rem;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+
+  &:hover { background-color: var(--first-color-alt); }
+}
+
+
+
+
+// ================================================================ //
+// NAVIGATION
+// ================================================================ //
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1024px;
+  height: var(--header-height);
+
+  &__link, &__logo, &__toggle { font-weight: var(--font-medium); color: var(--text-color); }
+
+  &__link { transition: 0.3s; }
+
+  &__logo:hover, &__link:hover { color: var(--first-color); }
+
+  &__item { margin-bottom: var(--mb-2); }
+
+  &__toggle { font-size: 1.3rem; cursor: pointer; }
+}
+
+// ------------------------------
+// | This media query sets the mobile version
+// | of our navigation. Hiding it with "top: -100%"
+// | and using the ".show-menu" class to reveal it.
+// |
+// | We use ".show-menu" in our JavaScript file.
+// ------------------------------
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: var(--z-fixed);
+    width: 100%;
+    padding: 1.5rem 0 1rem;
+    text-align: center;
+    background-color: var(--body-color);
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 0.1);
+    transition: 0.4s;
+  }
+}
+
+// ========== SHOW NAV ========== //
+.show-menu { top: var(--header-height); }
+
+.active-link { color: var(--first-color); }
+
+.scroll-header { box-shadow: 0 2px 4px rgb(0 0 0 / 0.1); }
+
+// ================================================================ //
+// SCROLLTOP
+// ================================================================ //
+
+.scrolltop {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  z-index: var(--z-tooltip);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem;
+  visibility: hidden;
+  background: var(--first-color);
+  border-radius: 0.4rem;
+  transition: 0.4s;
+
+  &:hover { background-color: var(--first-color-alt); }
+
+  &__icon { font-size: 1.8rem; color: var(--body-color); }
+}
+
+.show-scroll-top { bottom: 1.5rem; visibility: visible; }
+
+// ================================================================ //
+// HOME
+// ================================================================ //
+
+.home {
+
+  &__container {
+    align-content: center;
+    height: calc(100vh - var(--header-height));
+  }
+
+  &__title {
+    margin-bottom: var(--mb-1);
+    font-size: var(--biggest-font-size);
+    color: var(--first-color);
+  }
+
+  &__subtitle {
+    margin-bottom: var(--mb-4);
+    font-size: var(--h1-font-size);
+    color: var(--title-color);
+  }
+
+  &__img {
+    width: 300px;
+    justify-self: center;
+  }
 }
