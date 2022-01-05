@@ -359,5 +359,72 @@ img { max-width: 100%; height: auto; }
     width: 230px;
     justify-self: center;
   }
-
 }
+
+// ================================================================ //
+// CONTACT
+// ================================================================ //
+
+.contact {
+  &__container { text-align: center; }
+  &__description { margin-bottom: var(--mb-3); }
+}
+
+// ================================================================ //
+// FOOTER
+// ================================================================ //
+
+.footer {
+
+  &__container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    row-gap: 2rem;
+  }
+
+  &__logo {
+    font-size: var(--h3-font-size);
+    color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+  }
+
+  &__description {
+    display: block;
+    font-size: var(--small-font-size);
+    margin: 0.25rem 0 var(--mb-3);
+  }
+
+  &__social {
+    font-size: 1.5rem;
+    color: var(--title-color);
+    margin-right: var(--mb-2);
+  }
+
+  &__title {
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-2);
+  }
+
+  &__link {
+    display: inline-block;
+    color: var(--text-color);
+    margin-bottom: var(--mb-1);
+
+    &:hover { color: var(--first-color); }
+  }
+
+  &__copy {
+    display: block;
+    text-align: center;
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+    margin-top: 3.5rem;
+  }
+}
+
+
+
+
+
+
+
