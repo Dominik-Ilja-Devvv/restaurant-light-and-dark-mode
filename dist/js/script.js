@@ -68,3 +68,52 @@ function scrollTop() {
     scrollTop.classList.remove("show-scroll-top");
   }
 }
+
+/* ==================== DARK & LIGHT THEME ==================== */
+// const themeButton = document.getElementById("theme-button");
+// const darkTheme = "dark-theme";
+// const iconTheme = "bx-sun";
+
+// Previously selected topic (if user selected)
+// const selectedTheme = localStorage.getItem("selected-theme");
+// const selectedIcon = localStorage.getItem("selected-icon");
+
+// // We obtain the current theme that the interface has by validating the dark-theme class
+// const getCurrentTheme = () => { document.body.classList.contains(darkTheme) ? "dark" : "light"; };
+// const getCurrentIcon = () => { themeButton.classList.contains(iconTheme) ? "bx-moon" : "bx-sun"; };
+
+// // We validate if the user previously chose a topic
+// if (selectedTheme) {
+//   // If the validation is fulfilled, we ask what the issue
+//   // was to know if dark mode was activated or not
+//   // document.body.classList
+
+//   document.body.classList[selectedTheme === "dark" ? "add" : "remove"](darkTheme);
+//   themeButton.classList[selectedIcon === "bx-moon" ? "add" : "remove"](iconTheme);
+// }
+
+
+// themeButton.addEventListener("click", () => {
+//   // Toggle Theme & Icon
+//   document.body.classList.toggle(darkTheme);
+//   themeButton.classList.toggle(iconTheme);
+
+//   // We save the theme and the current icon that the user chose
+//   localStorage.setItem("selected-theme", getCurrentTheme());
+//   localStorage.setItem("selected-icon", getCurrentIcon());
+// });
+
+
+/* ==================== SCROLL REVEAL ANIMATION ==================== */
+const scrollReveal = ScrollReveal({
+  origin: "top",
+  distance: "30px",
+  duration: 2000,
+  reset: false
+});
+
+scrollReveal.reveal(`.home__data, .home__img,
+                     .about__data, .about__img,
+                     .services__content, .menu__content,
+                     .app__data, .app__img,
+                     .contact__data, .contact__button`, { interval: 200 });

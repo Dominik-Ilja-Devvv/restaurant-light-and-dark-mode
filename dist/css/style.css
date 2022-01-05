@@ -28,6 +28,13 @@
   --z-fixed: 100;
 }
 
+body.dark-theme {
+  --title-color: #f1f3f2;
+  --text-color: #c7d1cc;
+  --body-color: #1d2521;
+  --container-color: #27302c;
+}
+
 @media screen and (min-width: 768px) {
   :root {
     --biggest-font-size: 4rem;
@@ -126,6 +133,15 @@ img {
 }
 .button:hover {
   background-color: var(--first-color-alt);
+}
+
+.theme-button {
+  position: absolute;
+  right: 1rem;
+  top: 1.8rem;
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .nav {
@@ -400,6 +416,11 @@ img {
 
   .section {
     padding-top: 8rem;
+  }
+
+  .theme-button {
+    position: initial;
+    margin-left: var(--mb-2);
   }
 
   .nav {

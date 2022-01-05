@@ -46,6 +46,15 @@
   --z-fixed: 100;
 }
 
+// DARK THEME VARIABLES
+// ================================================ //
+body.dark-theme {
+  --title-color: #f1f3f2;
+  --text-color: #c7d1cc;
+  --body-color: #1d2521;
+  --container-color: #27302c;
+}
+
 // ------------------------------
 // | Use this media query to increase
 // | the font sizes for screens that are
@@ -63,6 +72,8 @@
     --smaller-font-size: 0.813rem;
   }
 }
+
+
 
 // ================================================================ //
 // RESET
@@ -143,6 +154,15 @@ img { max-width: 100%; height: auto; }
   transition: 0.3s;
 
   &:hover { background-color: var(--first-color-alt); }
+}
+
+.theme-button{
+  position: absolute;
+  right: 1rem;
+  top: 1.8rem;
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 // ================================================================ //
@@ -460,6 +480,11 @@ img { max-width: 100%; height: auto; }
   body { margin: 0; }
 
   .section { padding-top: 8rem; }
+
+  .theme-button {
+    position: initial;
+    margin-left: var(--mb-2);
+  }
 
   .nav {
     height: calc(var(--header-height) + 1.5rem);
